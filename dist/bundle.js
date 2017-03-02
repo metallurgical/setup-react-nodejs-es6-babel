@@ -21726,6 +21726,10 @@ var _inputComponent = __webpack_require__(181);
 
 var _inputComponent2 = _interopRequireDefault(_inputComponent);
 
+var _OutputComponent = __webpack_require__(183);
+
+var _OutputComponent2 = _interopRequireDefault(_OutputComponent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21743,28 +21747,50 @@ var App = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
 		_this.state = {
-			value: 0,
-			symbol: 'm',
-			sum: 0
+			value: '',
+			symbol: 'm'
 		};
+
+		_this.handlerChangeToKM = _this.handlerChangeToKM.bind(_this);
+		_this.handlerChangeToM = _this.handlerChangeToM.bind(_this);
 		return _this;
 	}
 
 	_createClass(App, [{
+		key: 'handlerChangeToKM',
+		value: function handlerChangeToKM(e) {
+			this.setState({
+				value: e.target.value,
+				symbol: 'km'
+			});
+		}
+	}, {
+		key: 'handlerChangeToM',
+		value: function handlerChangeToM(e) {
+			this.setState({
+				value: e.target.value,
+				symbol: 'm'
+			});
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 
-			var value = this.state.value;
+			var m = this.state.symbol == 'km' ? this.state.value * 1000 : this.state.value;
+			var km = this.state.symbol == 'm' ? this.state.value / 1000 : this.state.value;
+
 			var symbol = this.state.symbol;
+			var output = this.state.output;
 
 			return _react2.default.createElement(
 				'div',
 				null,
 				'M : ',
-				_react2.default.createElement(_inputComponent2.default, { value: value }),
+				_react2.default.createElement(_inputComponent2.default, { value: m, onChange: this.handlerChangeToM }),
 				_react2.default.createElement('br', null),
 				'KM : ',
-				_react2.default.createElement(_inputComponent2.default, { value: value })
+				_react2.default.createElement(_inputComponent2.default, { value: km, onChange: this.handlerChangeToKM }),
+				_react2.default.createElement(_OutputComponent2.default, { currentState: this.state })
 			);
 		}
 	}]);
@@ -21819,7 +21845,7 @@ var InputComponent = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement('input', { type: 'text', value: this.props.value })
+				_react2.default.createElement('input', { type: 'text', value: this.props.value, onChange: this.props.onChange })
 			);
 		}
 	}]);
@@ -21828,6 +21854,40 @@ var InputComponent = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = InputComponent;
+
+/***/ }),
+/* 182 */,
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = OutputComponent;
+
+var _react = __webpack_require__(80);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(31);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function OutputComponent(props) {
+	return _react2.default.createElement(
+		'div',
+		null,
+		'State now : value = ',
+		props.currentState.value,
+		', conversion = from ',
+		props.currentState.symbol
+	);
+}
 
 /***/ })
 /******/ ]);

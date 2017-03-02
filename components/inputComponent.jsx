@@ -10,7 +10,7 @@ export default class InputComponent extends React.Component {
 	render () {
 
 		return (
-			<div><input type="text" value={this.props.value} /></div>
+			<div><input type="text" value={this.props.value} onChange={this.props.onChange}/></div>
 		);
 	}
 }
