@@ -78,4 +78,4 @@ app.listen( '3000', function () {
 Run `node server.js`, and wait for web server running up. Then navigate to `http://localhost:3000` and play with reactJs simple apps. Have fun :)
 
 # Source
-All the sample code included together with this repo. Clone this repo into your local development to test it out. 
+All the sample code included together with this repo. Clone this repo into your local development to test it out; before that run `npm install` to install dependencies first before test. 
