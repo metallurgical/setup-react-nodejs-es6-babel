@@ -13,7 +13,7 @@ Navigate to project root directory, and use with node npm command to install, eg
   - express — nodejs lightweight framework
   
 # Webpack Config
-Save the webpack configuration as `<root-project>/webpack.config.js` . To run the the code, type in `webpack` in terminal/cli
+Save the webpack configuration as `<root-project>/webpack.config.js` . To run the code, type in `webpack` in terminal/cli
 
 ```js
 module.export = {
@@ -75,4 +75,4 @@ app.listen( '3000', function () {
 Run `node server.js`, and wait for web server running up. Then navigate to `http://localhost:3000` and play with reactJs simple apps. Have fun :)
 
 # Source
-All the sample code included together wuth this repo. Clone this repo into your local development to test it out. 
+All the sample code included together with this repo. Clone this repo into your local development to test it out. 
