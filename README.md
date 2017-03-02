@@ -59,10 +59,13 @@ This file contains our server setup and route. And we need to run this file usin
 var express = require( 'express' ); // require express framework
 var app = express(); // call express module to get its instance
 var path = require( 'path' ); // path helpers's module
+// serve static file like js/css/imgage,etc..
+// later we will use virtual path `/static` in out html file
+app.use('/static', express.static( path.join( __dirname, '/dist' ) ) );
 
 // root application route
 app.get('/', function ( req, res ) {
-  res.sendFile( path.resolve( __dirname . 'views/index.html' ); // index is our view file
+  res.sendFile( __dirname + '/view/index.html' ); // index is our view file
 });
 
 // execute and run server on 3000 port
