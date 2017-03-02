@@ -3,17 +3,17 @@ Tooling for setting Reactjs with nodejs + es6 + babel + webpack transpiler
 
 # Tools/Installation
 Navigate to project root directory, and use with node npm command to install, eg : `npm install --save-dev <moduleName> <moduleNameN>`
-  - react
-  - react-dom
+  - react — react library
+  - react-dom — react dom library
   - babel-loader
   - babel-core
-  - babel-preset-es2015
-  - babel-preset-react
-  - webpack
-  - express
+  - babel-preset-es2015 — transpiler from es6 to es5 features
+  - babel-preset-react — transpiler from jsx to js
+  - webpack — bundling asset into chunk,etc..
+  - express — nodejs lightweight framework
   
 # Webpack Config
-Save the webpack configuration as `<root-project>/webpack.config.js`
+Save the webpack configuration as `<root-project>/webpack.config.js` . To run the the code, type in `webpack` in terminal/cli
 
 ```js
 module.export = {
@@ -70,3 +70,5 @@ app.listen( '3000', function () {
   console.log( 'Server is running on port 3000' );
 });
 ```
+
+
